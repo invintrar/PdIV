@@ -1,21 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 30 14:47:03 2019
-
-@author: Gustavo
-"""
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Oct 28 18:33:35 2019
-
-@author: Gustavo
-"""
-
-
-
 
 import cv2
 import matplotlib.pyplot as plt
@@ -35,24 +17,20 @@ from skimage import exposure
 #import signal_function as sig
 
 
-path='/Users/Gustavo/AnacondaProjects/pythonCode/0_Database/Varios/'
-pathVFmuscle='/Users/Gustavo/AnacondaProjects/pythonCode/0_Database/VFDATABASE/Crop1_muscle/'
-pathVFcolageno='/Users/Gustavo/AnacondaProjects/pythonCode/0_Database/VFDATABASE/Crop6_collagane/'
-
-
-ImgVFmuscle0=imread(pathVFmuscle+'0000.tif',as_gray='True')
-ImgVFmuscle1=imread(pathVFmuscle+'0001.tif',as_gray='True')
-ImgVFcolageno0=imread(pathVFcolageno+'Image_0000.tif',as_gray='True')
-ImgVFcolageno1=imread(pathVFcolageno+'Image_0001.tif',as_gray='True')
+ImgVFmuscle0=imread('toro.jpg',as_gray='True')
+ImgVFmuscle1=imread('toro.jpg',as_gray='True')
+ImgVFcolageno0=imread('toro.jpg',as_gray='True')
+ImgVFcolageno1=imread('toro.jpg',as_gray='True')
 
 plt.subplot(2,2,1),plt.imshow(ImgVFmuscle0,cmap='gray')
 plt.subplot(2,2,2),plt.imshow(ImgVFmuscle1,cmap='gray')
 plt.subplot(2,2,3),plt.imshow(ImgVFcolageno0,cmap='gray')
 plt.subplot(2,2,4),plt.imshow(ImgVFcolageno1,cmap='gray')
 
-
+'''
 def angle(dx, dy):
     return np.arctan2(dy, dx)
+
 
 ########## bordes camera man###############
 from skimage.data import camera
@@ -89,7 +67,7 @@ for a in ax:
 
 plt.tight_layout()
 plt.show()
-
+'''
 ####### bordes musculo#############
 
 #### CLAHE ##################
@@ -136,11 +114,3 @@ for a in ax:
 
 plt.tight_layout()
 plt.show()
-
-
-
-
-
-
-
-
