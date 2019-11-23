@@ -1,92 +1,106 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Jul 27 11:31:21 2019
-
-@author: Gustavo
-"""
-
-# import opencv 
 import cv2 
 import matplotlib.pyplot as plt
+import skimage.filters as filters
 
-path='/Users/Gustavo/AnacondaProjects/pythonCode/0_Database/Varios/'
-
-
+'''
+min = 65
+max = 115
 # Read image 
-src = cv2.imread(path+"lena.png", cv2.IMREAD_GRAYSCALE); 
-cv2.imshow("original",src)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+src = cv2.imread("toro.jpg", cv2.IMREAD_GRAYSCALE); 
 
-
-# Basic threhold example 
-th, dst = cv2.threshold(src, 150, 255, cv2.THRESH_BINARY); 
-cv2.imshow("images1",dst)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-#cv2.imwrite("opencv-threshold-example.jpg", dst); 
-
-
-# Thresholding with maxValue set to 128
-th, dst = cv2.threshold(src, 127, 128, cv2.THRESH_BINARY); 
-cv2.imshow("images",dst)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-#cv2.imwrite("opencv-thresh-binary-maxval.jpg", dst); 
-
-
+# THRESH_BINARY
+th1, dst1 = cv2.threshold(src, min, max, cv2.THRESH_BINARY); 
 
 # Thresholding using THRESH_BINARY_INV 
-th, dst = cv2.threshold(src,127,255, cv2.THRESH_BINARY_INV); 
-cv2.imshow("images",dst)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-#cv2.imwrite("opencv-thresh-binary-inv.jpg", dst); 
+th2, dst2 = cv2.threshold(src, min, max, cv2.THRESH_BINARY_INV); 
 
 # Thresholding using THRESH_TRUNC 
-th, dst = cv2.threshold(src,127,255, cv2.THRESH_TRUNC); 
-cv2.imshow("images1",dst)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-#cv2.imwrite("opencv-thresh-trunc.jpg", dst); 
+th3, dst3 = cv2.threshold(src, min, max, cv2.THRESH_TRUNC); 
 
 # Thresholding using THRESH_TOZERO 
-th, dst = cv2.threshold(src,127,255, cv2.THRESH_TOZERO); 
-cv2.imshow("images",dst)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-#cv2.imwrite("opencv-thresh-tozero.jpg", dst); 
+th4, dst4 = cv2.threshold(src, min, max, cv2.THRESH_TOZERO); 
 
 # Thresholding using THRESH_TOZERO_INV 
-th, dst = cv2.threshold(src,127,255, cv2.THRESH_TOZERO_INV); 
-cv2.imshow("images",dst)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-#cv2.imwrite("opencv-thresh-to-zero-inv.jpg", dst); 
+th5, dst5 = cv2.threshold(src, min, max, cv2.THRESH_TOZERO_INV); 
 
-#cv2.calcHist(images, channels, mask, histSize, ranges[, hist[, accumulate]])
-ret,thr = cv2.threshold(src, 0, 255,cv2.THRESH_OTSU)
-cv2.imshow("images",thr)
+# Thresholding using THRESH_TOZERO_OTSU
+th6, dst6 = cv2.threshold(src, min, max,cv2.THRESH_OTSU)
+
+# Filtrando
+dst7 =  edge_sobel = filters.median(dst6)
+
+edge_prewitt_v=filters.prewitt_v(dst7)
+
+edge_prewitt_h=filters.prewitt_h(dst7)
+
+edge = edge_prewitt_h + edge_prewitt_v
+
+
+plt.subplot(2,4,1)
+plt.imshow(src,cmap='gray')
+plt.title('Origin')
+plt.axis("off")
+
+plt.subplot(2,4,2)
+plt.imshow(dst1,cmap='gray')
+plt.title('THRESH_BINARY')
+plt.axis("off")
+
+plt.subplot(2,4,3)
+plt.imshow(dst2,cmap='gray')
+plt.title('THRESH_BINARY_INV')
+plt.axis("off")
+
+plt.subplot(2,4,4)
+plt.imshow(dst3,cmap='gray')
+plt.title('THRESH_TRUNC')
+plt.axis("off")
+
+plt.subplot(2,4,5)
+plt.imshow(dst4,cmap='gray')
+plt.title('THRESH_TOZERO')
+plt.axis("off")
+
+plt.subplot(2,4,6)
+plt.imshow(dst5,cmap='gray')
+plt.title('THRESH_TOZERO_INV')
+plt.axis("off")
+
+plt.subplot(2,4,7)
+plt.imshow(dst6,cmap='gray')
+plt.title('THRESH_TOZERO_OTSU')
+plt.axis("off")
+
+plt.subplot(2,4,8)
+plt.imshow(edge,cmap='gray')
+plt.title('Filtramos')
+plt.axis("off")
+
+
+plt.show()
+
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 
 ####GUINEO###
-imgray = cv2.imread(path+"guineo.jpg");
-cv2.imshow("guineo",imgray)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Leer la imagen
+imgray = cv2.imread("toro.jpg");
+
 b,g,r=cv2.split(imgray)
-plt.hist(b.ravel(),256,[0,256]); plt.show()
+# Calcula histograma
+plt.hist(b.ravel(),256,[0,256])
+plt.show()
 cv2.imshow("Imagen",b)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-
-####threslhold
-ret, thresh2 = cv2.threshold(imgray, 0, 255, cv2.THRESH_OTSU)
+####threslhold###
+ret, thresh2 = cv2.threshold(b, 0, 255, cv2.THRESH_OTSU)
 cv2.imshow("threshold",thresh2)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
@@ -105,9 +119,10 @@ cv2.imshow("images",imgray)
 #cnt = contours[4]
 #cv2.drawContours(imgray, [cnt], 0, (0,255,0), 3)
 
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
-
-
+'''
 ############OTSU###############################
 import numpy as np
 import matplotlib.pyplot as plt
@@ -196,23 +211,7 @@ ax.set_axis_off()
 plt.tight_layout()
 plt.show()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'''
 
 #### Histogram equalization
 import cv2
@@ -232,7 +231,5 @@ for i,col in enumerate(color):
     plt.plot(histr,color = col)
     plt.xlim([0,256])
     plt.show()
-   
-    
-    
-    
+
+'''

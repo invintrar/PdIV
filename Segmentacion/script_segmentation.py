@@ -27,7 +27,7 @@ plt.subplot(2,2,2),plt.imshow(ImgVFmuscle1,cmap='gray')
 plt.subplot(2,2,3),plt.imshow(ImgVFcolageno0,cmap='gray')
 plt.subplot(2,2,4),plt.imshow(ImgVFcolageno1,cmap='gray')
 
-'''
+
 def angle(dx, dy):
     return np.arctan2(dy, dx)
 
@@ -67,7 +67,7 @@ for a in ax:
 
 plt.tight_layout()
 plt.show()
-'''
+
 ####### bordes musculo#############
 
 #### CLAHE ##################

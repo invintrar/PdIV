@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import fuctionR
 
-[imgO,imgN, imgR] = fuctionR.unwarapPhase()
-#[imgO,imgN, imgR] = fuctionR.wiener()
+#[imgO,imgN, imgR] = fuctionR.unwarapPhase()
+[imgO,imgN, imgR] = fuctionR.wiener()
 #[imgO,imgN, imgR] = fuctionR.cspin()
 #[imgO,imgN, imgR] = fuctionR.denoiseNlMeans()
 #[imgO,imgN, imgR] = fuctionR.denoiseTvBregman()
