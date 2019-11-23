@@ -70,11 +70,12 @@ def deoniseBilateral():
 def estimateSigma():
     img = img_as_float(skimage.data.camera())
     imgO = img.copy()
-    sigma = 0.01
+    sigma = 0.5
     img = img + sigma * np.random.standard_normal(img.shape)
     imgN = img.copy()
     sigma_hat = estimate_sigma(img, multichannel=False)
-    imgR = sigma_hat.copy()
+    imgR = img.copy()
+    print(f"Estimated Gaussian noise standard deviation = {sigma_hat}")
     
     return [imgO, imgN, imgR]
 
@@ -97,11 +98,11 @@ def richardsonLucy():
     
     psf = np.ones((5, 5)) / 25
     camera = convolve2d(camera, psf, 'same')
-    camera += 0.1 * camera.std() * np.random.standard_normal(camera.shape)
+    camera += 0.5 * camera.std() * np.random.standard_normal(camera.shape)
     imgN = camera.copy()
     
     deconvolved = restoration.richardson_lucy(camera, psf, 5)
-    imgR = deconvolved.copy()
+    imgR = deconvolved
 
     return [imgO, imgN, imgR]
 
@@ -149,7 +150,7 @@ def unSupervisedWiener():
     img += 0.1 * img.std() * np.random.standard_normal(img.shape)
     imgN = img.copy()
     
-    deconvolved_img = restoration.unsupervised_wiener(img, psf)
-    imgR = deconvolved_img.cpy()
+    restoration.unsupervised_wiener(img, psf)
+    imgR = img.copy()
     
     return [imgO, imgN, imgR]

@@ -2,8 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import fuctionR
 
-#[imgO,imgN, imgR] = fuctionR.unwarapPhase()
+
 [imgO,imgN, imgR] = fuctionR.wiener()
+#[imgO,imgN, imgR] = fuctionR.unwarapPhase()
 #[imgO,imgN, imgR] = fuctionR.cspin()
 #[imgO,imgN, imgR] = fuctionR.denoiseNlMeans()
 #[imgO,imgN, imgR] = fuctionR.denoiseTvBregman()
@@ -13,8 +14,7 @@ import fuctionR
 #[imgO,imgN, imgR] = fuctionR.estimateSigma()
 #[imgO,imgN, imgR] = fuctionR.inpaintBiharmonic()
 #[imgO,imgN, imgR] = fuctionR.richardsonLucy()
-#[imgO,imgN, imgR] = fuctionR.unsupervisedWiener()
-
+#[imgO,imgN, imgR] = fuctionR.unSupervisedWiener()
 
 
 #Mostramos las imagenes

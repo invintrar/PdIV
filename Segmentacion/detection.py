@@ -42,6 +42,7 @@ cv2.drawContours(imag1, contours, -1, (200,0,0), 1)
 img_bin = clear_border(closing(imag1 > 120, square(20)))
 
 
+
 #etiqueta los objetos
 labels = label(img_bin)
 
