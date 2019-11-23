@@ -68,24 +68,23 @@ plt.setp(obj_ttl,color='b')
 plt.axis("off")
 
 plt.subplot(2,3,4)
+plt.imshow(imag1,cmap='gray')
+obj_ttl=plt.title('Edge Otsu')
+plt.setp(obj_ttl,color='b')
+plt.axis("off")
+
+plt.subplot(2,3,5)
 plt.imshow(img_bin,cmap='gray')
 obj_ttl=plt.title('Closing')
 plt.setp(obj_ttl,color='b')
 plt.axis("off")
 
-
-plt.subplot(2,3,5)
+plt.subplot(2,3,6)
 plt.imshow(labels,cmap=plt.cm.rainbow)
 obj_ttl=plt.title('Label')
 plt.setp(obj_ttl,color='b')
 plt.axis("off")
 
-
-plt.subplot(2,3,6)
-plt.imshow(imag1,cmap='gray')
-obj_ttl=plt.title('Edge Otsu')
-plt.setp(obj_ttl,color='b')
-plt.axis("off")
 
 plt.show()
 
