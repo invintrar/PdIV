@@ -50,7 +50,7 @@ References
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
-from skimage import data, img_as_float,io
+from skimage import data, img_as_float, io
 from skimage.segmentation import (morphological_chan_vese,
                                   morphological_geodesic_active_contour,
                                   inverse_gaussian_gradient,
@@ -69,8 +69,8 @@ def store_evolution_in(lst):
 
 
 # Morphological ACWE
-src = cv2.imread("monito.jpg",1)
-scr1 = src[:,:,1]
+src = cv2.imread("monito.jpg", 1)
+scr1 = src[:, :, 1]
 image = img_as_float(scr1)
 
 # Initial level set
@@ -103,8 +103,8 @@ ax[1].set_title(title, fontsize=12)
 
 
 # Morphological GAC
-src = cv2.imread("monito.jpg",1)
-scr1 = src[:,:,1]
+src = cv2.imread("monito.jpg", 1)
+scr1 = src[:, :, 1]
 image = img_as_float(scr1)
 #image = img_as_float(data.coins())
 gimage = inverse_gaussian_gradient(image)
