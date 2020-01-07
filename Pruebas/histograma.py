@@ -2,10 +2,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-#img = cv2.imread('../images/lena_color_512.tif', cv2.IMREAD_GRAYSCALE)
-#img = cv2.imread('../images/lena_color_512.tif')
 img = cv2.imread('100.bmp')
-
 
 color = ('b', 'g', 'r')
 
@@ -22,7 +19,7 @@ for i, c in enumerate(color):
     plt.xlim([0, 256])
 
 
-'''
+
 hist = cv2.calcHist([img],[0],None, [256], [0, 256])
 
 plt.subplot(121)
@@ -33,7 +30,7 @@ plt.subplot(122)
 plt.plot(hist, color='gray')
 plt.xlabel('Intensidad')
 plt.ylabel('Pixeles')
-'''
+
 plt.show()
 
 cv2.waitKey(0)

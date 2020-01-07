@@ -94,7 +94,6 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 
-
 ### usar las regiones
 regions = regionprops(labels)
 boxes = np.array([label['BoundingBox'] for label in regions if label['Area'] < 50])

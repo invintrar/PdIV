@@ -3,7 +3,7 @@ import cv2
 
 #Cargamos la plantilla e inicilizamos la webcam
 cv2.CascadeClassifier
-face_cascade = cv2.CascadeClassifier('RFacial\haarcascade_frontalface_alt.xml')
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
 cap = cv2.VideoCapture(0)
 
 while(True):
