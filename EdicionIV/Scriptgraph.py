@@ -172,12 +172,14 @@ def interpolacion(x,y):
        return xi,yi
 ########################################################################
 
+a = 'im'
 
 
-
-img = img_as_float(cv2.imread("monito.jpg"))
+img = img_as_float(cv2.imread(a+'/'+'monito.jpg'))
     #img = img_as_float(cv2.imread(path+"images.jpeg"))
     #img = img_as_float(cv2.imread(path+"mula.jpg"))
+
+
 
 img_copy = img.copy()
 
