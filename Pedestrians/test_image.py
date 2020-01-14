@@ -21,13 +21,13 @@ __license__ = "GPL"
 __version__ = "1.0"
 __maintainer__ = "Miquel Ferrarons"
 
-from Tools import detector
-from Tools import drawing
+import detector
+import drawing
 from PIL import Image
 import matplotlib.pyplot as plt
 import platform
 def run():
-    imagePath = '/Images/Image001.png'
+    imagePath = 'C:/Users/Darwin/Documents/GitHub/PdIV/Pedestrians/Images/Image001.png'
     bboxes, scores = detector.testImage(imagePath, applyNMS=True)
 
     img = Image.open(imagePath)

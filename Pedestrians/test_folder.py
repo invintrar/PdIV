@@ -38,7 +38,8 @@ def run():
     detector.testFolder(cfg.testFolderPath,
                         cfg.resultsFolder,
                         decisionThreshold=cfg.decision_threshold_min,
-                        applyNMS=False)
+                        applyNMS=False
+                        )
 
 
 

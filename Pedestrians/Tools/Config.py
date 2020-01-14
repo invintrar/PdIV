@@ -26,8 +26,8 @@ __maintainer__ = "Miquel Ferrarons"
 #############################
 
 #featuresToExtract = ['HOG']
-featuresToExtract = ['LBP']
-#featuresToExtract = ['HOG', 'LBP']
+#featuresToExtract = ['LBP']
+featuresToExtract = ['HOG', 'LBP']
 
 # LBP Parameters
 lbp_win_shape = (16, 16)
@@ -59,8 +59,8 @@ negativeInputPath = datasetRoot+'/'+negative_folder
 
 #Location to store the features of of the positive and negative sample images
 featuresFolder = '-'.join(featuresToExtract)
-positiveFeaturesPath = 'C:/Users/Darwin/Documents/GitHub/PdIV/Pedestrians/Features/'+featuresFolder+'/'+positive_folder
-negativeFeaturesPath = 'C:/Users/Darwin/Documents/GitHub/PdIV/Pedestrians/Features/'+featuresFolder+'/'+negative_folder
+positiveFeaturesPath = 'Features/'+featuresFolder+'/'+positive_folder
+negativeFeaturesPath = 'Features/'+featuresFolder+'/'+negative_folder
 
 #TODO: Modify testFolderPath and annotationsFolderPath to point
 #TODO: to your location of the test and annotations folders
@@ -77,7 +77,7 @@ model = 'LogisticRegression'
 # Location of the model
 
 modelFeatures = '-'.join(featuresToExtract)
-modelPath = 'C:/Users/Darwin/Documents/GitHub/PdIV/Pedestrians/Models/'+model+'_'+modelFeatures+'.model'
+modelPath = 'Models/'+model+'_'+modelFeatures+'.model'
 
 # SVM.LinearSVC parameters
 svm_C = 0.01
@@ -110,16 +110,16 @@ if model is 'SVM':
     if 'HOG' in featuresToExtract and 'LBP' in featuresToExtract:
         decision_threshold = 1.2  # for SVM-HOG-LBP
     elif 'HOG' in featuresToExtract:
-        decision_threshold = 4  # for SVM-HOG
+        decision_threshold = 1.2  # for SVM-HOG
     elif 'LBP' in featuresToExtract:
-        decision_threshold = 2  # for SVM-LBP
+        decision_threshold = 1.2  # for SVM-LBP
 elif model is 'LogisticRegression':
     if 'HOG' in featuresToExtract and 'LBP' in featuresToExtract:
         decision_threshold = 3.5  # for SVM-HOG-LBP
     if 'HOG' in featuresToExtract:
         decision_threshold = 3.5  # for LogisticRegression-HOG
     elif 'LBP' in featuresToExtract:
-        decision_threshold = 10  # for LogisticRegression-LBP
+        decision_threshold = 8.2  # for LogisticRegression-LBP
 
 #Downscale factor for the pyramid
 downScaleFactor = 1.2

@@ -25,11 +25,11 @@ __email__ = "miquelferrarons@gmail.com"
 import Config as cfg
 import pickle
 import numpy as np
-from Tools import nms
+import nms
 import os
 import matplotlib.pyplot as plt
-from Tools import evaluation as eval
-from Tools import utils
+import evaluation as eval
+import utils
 
 def run():
 
@@ -48,7 +48,7 @@ def run():
     for resultsFile in resultsFileList:
         resultsFilePath = cfg.resultsFolder+'/'+resultsFile
 
-        file = open(resultsFilePath, 'r')
+        file = open(resultsFilePath, 'rb')
         imageResults = pickle.load(file)
         file.close()
 
@@ -92,7 +92,7 @@ def run():
     print (totalTP + totalFP)
     detection_rate = totalTP / (totalTP + totalFN) #Tasa de deteccion
     miss_rate = 1 - detection_rate #Tasa de error
-    fppi = totalFP / len(resultsFileList) #FPPI (Falsos positivos por imagen)
+    fppi = totalFP / len(list(filter(lambda element: '.result' in element, fileList))) #FPPI (Falsos positivos por imagen)
 
     #Plot the results
     plt.figure()

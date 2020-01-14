@@ -50,7 +50,7 @@ def run():
 
     #Load the features of the first element, to obtain the size of the feature vectors.
     filepath = cfg.positiveFeaturesPath + '/'+positiveList[0]
-    file = open(filepath, 'r')
+    file = open(filepath)
     feats = pickle.load(file)
     featuresLength = len(feats)
 

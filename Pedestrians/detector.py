@@ -41,10 +41,10 @@ sys.path.append('C:/Users/Darwin/Documents/GitHub/PdIV/Pedestrians/Tools')
 
 def testImage(imagePath, decisionThreshold = cfg.decision_threshold, applyNMS=True):
 
-    file = open(cfg.modelPath,'rb')
-    svc = pickle.load(file,encoding='latin1')
+    file = open(cfg.modelPath)
+    svc = pickle.load(file)
 
-    image = io.imread(imagePath, as_gray=True)
+    image = io.imread(imagePath, as_grey=True)
     image = util.img_as_ubyte(image) #Read the image as bytes (pixels with values 0-255)
 
     rows, cols = image.shape

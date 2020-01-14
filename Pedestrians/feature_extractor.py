@@ -28,7 +28,7 @@ from skimage.feature import local_binary_pattern
 from skimage.util import view_as_windows
 
 import sys 
-sys.path.append('C:/Users/Darwin/Documents/GitHub/PdIV/Pedestrians')
+sys.path.append('C:/Users/Darwin/Documents/GitHub/PdIV/Pedestrians/')
 
 
 
@@ -66,6 +66,5 @@ def extractHOGfeatures(img):
              orientations=cfg.hog_orientations,
              pixels_per_cell=cfg.hog_pixels_per_cell,
              cells_per_block=cfg.hog_cells_per_block,
-             visualise=False,
-             normalise=cfg.hog_normalise)
+             visualize=False)
     return fd

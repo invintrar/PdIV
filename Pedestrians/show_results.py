@@ -28,7 +28,7 @@ from Tools import drawing
 import Config as cfg
 from PIL import Image
 import numpy as np
-from Tools import nms
+import nms
 
 def run():
     fileList = os.listdir(cfg.resultsFolder)
@@ -37,7 +37,7 @@ def run():
     for resultsFile in resultsFileList:
 
         resultsFilePath = cfg.resultsFolder + '/' +resultsFile
-        file = open(resultsFilePath, 'r')
+        file = open(resultsFilePath, 'rb')
         imageResults = pickle.load(file)
 
         boxes = imageResults['bboxes']
