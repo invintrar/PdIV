@@ -1,0 +1,65 @@
+#Pacientes id=0
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs05/02-18-2019-CT-90318/28629/"
+
+#Pacientes id=1
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs06/02-18-2019-CT-43086/01133/"
+
+#Paciente id = 2
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs08/02-18-2019-CT-92820/59014/"
+
+#Paciente id = 3
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs09/02-18-2019-CT-29444/81324/"
+
+#Paciente id = 4
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs10/02-18-2019-CT-86258/87426/"
+
+#Paciente id = 5
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs11/02-18-2019-CT-77226/98844/"
+
+#Paciente id = 6
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs12/02-18-2019-CT-46544/19902/"
+
+#Paciente id = 7
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs13/02-18-2019-CT-90942/17807/"
+
+#Paciente id = 8
+data_path =  "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs14/02-18-2019-CT-02473/76037/"
+
+#Paciente id = 9
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs15/02-18-2019-CT-82137/77399/"
+
+#Paciente id = 10
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs18/02-18-2019-CT-43114/24973/"
+
+#Paciente id = 11
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs19/02-18-2019-CT-86722/37878/"
+
+#Paciente id = 12
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs20/02-18-2019-CT-08037/04055/"
+
+#Paciente id = 13
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs21/02-18-2019-CT-70418/37400/"
+
+#Paciente id = 14
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs22/02-18-2019-CT-58123/66660/"
+
+#Paciente id = 15
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs27/02-18-2019-CT-89549/09791/"
+
+#Paciente id = 16
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs28/02-18-2019-CT-70273/51631/"
+
+#Paciente id = 17
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs29/02-18-2019-CT-37272/74143/"
+
+#Paciente id = 18
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs31/02-18-2019-CT-03804/87737/"
+
+#Paciente id = 19
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs32/02-18-2019-CT-27783/37765/"
+
+#Paciente id = 20
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs33/02-18-2019-CT-39728/23737/"
+
+#Paciente id = 21
+data_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs34/02-18-2019-CT-58112/33129/"

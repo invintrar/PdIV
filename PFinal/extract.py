@@ -5,11 +5,12 @@ import pandas as pd
 import numpy as np
 import csv
 # list of attributes available in dicom image
-dicom_image_description = pd.read_csv('C:\\Users\\Darwin\\Documents\\GitHub\\Dsp\\ProyectoFinal\\DICOM-to-JPG\\dicom_image_description.csv')
-path ='C:\\Users\\Darwin\\Documents\\GitHub\\Dsp\\ProyectoFinal\\DICOM-to-JPG\\Patient_Detail.csv'
+dicom_image_description = pd.read_csv("C:/Users/Darwin/Documents/GitHub/PdIV/PFinal/dicom_image_description.csv")
+
+path ="C:/Users/Darwin/Documents/GitHub/PdIV/PFinal/Patient_Detail.csv"
 #print(dicom_image_description)
 # Specify the .dcm folder path
-folder_path = 'C:\\Users\\Darwin\\Documents\\NSCLC-RADIOMICS-INTEROBSERVER1\\interobs05\\02-18-2019-CT-90318\\28629\\'
+folder_path = "C:/Users/Darwin/Documents/NSCLC-RADIOMICS-INTEROBSERVER1/interobs05/02-18-2019-CT-90318/1-ARIA RadOnc Structure Sets-55318/"
 
 images_path = os.listdir(folder_path)
 

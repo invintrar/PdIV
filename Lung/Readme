@@ -1,0 +1,7 @@
+Paso para la utilizacion del codigo:
+ 1. Se agrupa toda las imaganes del paciente que contenga las imagenes dicom y se guarda esto se logra mediante el archivo al correr imagenes.py. 
+    Para cada paciente se le asigna id este id se utilizara posteriormente para cargar las imagenes puesto que realizar todo los pasos se demora mucho en la ejecución.
+ 2. Con dichas imágenes se procede al re muestreo con el archivo geRemuestreo.py el cual gurada un archivo con las nuevas imagenes de re muestreo.
+ 3. Podemos visualizar el conjunto aplicando la segmentacion utilizando visualizacionSeg.py el cual no muestre cual es el rango util para tomar las muestras para la grafica 3d.
+ 4. Corremos Maskara.py para obtener la mascara y la imagenes para graficar en 3D.
+ 5. Corremos lung3D par obterner la reconstrucción 3D. 
